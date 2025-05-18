@@ -21,6 +21,9 @@ class Solution {
                     boolean flag = true;
                     for (int[] ranker : ranking) {
                         if (candidate[0] < ranker[0] && candidate[1] < ranker[1]) {
+                            if (candidate[0] == scores[0][0] && candidate[1] == scores[0][1]) {
+                                return -1;
+                            }
                             flag = false;
                             break;
                         }
@@ -48,6 +51,6 @@ class Solution {
             }
         }
         
-        return rank;
+        return -1;
     }
 }
